@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">App1</string>
+    <string name="api_key">309610cebd3a841e4463ad33ddf8f4e8</string>
+    <string name="no_results">No Results Found</string>
+    <string name="fetching_data">Fetching Data...</string>
+    <string name="search_hint">Select a City ...</string>
+
+    <string-array name="cities">
+        <item>Select City</item>
+        <item>Los Angeles</item>
+        <item>New York City</item>
+    </string-array>
 </resources>

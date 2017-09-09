@@ -1,18 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
     tools:context="com.android.elliotmiller.app1.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/spinner_city"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="60dp"/>
+    <TextView
+        android:id="@+id/tv_search_hint"
+        android:text="@string/search_hint"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:id="@+id/view_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        style="@android:style/Widget.ProgressBar.Large"
+        android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/indeterminateBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:text="@string/fetching_data"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/view_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_city"
+                android:paddingBottom="5dp"
+                android:maxLines="1"
+                android:drawablePadding="10dp"
+                android:textSize="24sp"
+                android:gravity="bottom"
+                android:drawableLeft="@drawable/ic_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_temprature"
+                android:paddingBottom="5dp"
+                android:maxLines="1"
+                android:drawablePadding="10dp"
+                android:textSize="24sp"
+                android:gravity="bottom"
+                android:drawableLeft="@drawable/ic_temprature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_other_details"
+                android:paddingBottom="5dp"
+                android:drawablePadding="10dp"
+                android:textSize="24sp"
+                android:gravity="bottom"
+                android:drawableLeft="@drawable/ic_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="1"/>
+
+            <TextView
+                android:id="@+id/tv_last_updated"
+                android:gravity="center_horizontal"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
